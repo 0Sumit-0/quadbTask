@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import '../../detail/screen/detail_screen.dart';
 import '../provider/search_provider.dart';
 
 class SearchPage extends StatefulWidget {
@@ -127,7 +128,12 @@ class _SearchPageState extends State<SearchPage> {
                     child: Row(
                       children: [
                         GestureDetector(
-                          onTap: () {},
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (BuildContext context) => ShowDetailScreen(movie: movie,)),
+                            );
+                          },
                           child: Container(
                             height: 190,
                             width: 140,
